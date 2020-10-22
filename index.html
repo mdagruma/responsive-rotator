@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<title>Responsive Rotator</title>
+
+    <!-- CUSTOM ICONS -->
+    <link rel="stylesheet" href="css/style-webfonts.css" type="text/css" media="all" />
+
+    <!-- ROTATOR STYLES -->
+    <link rel="stylesheet" href="css/style-rotator.css" type="text/css" media="all" />
+</head>
+<body>
+	
+    <!-- Rotator HTML -->
+    <section class="gallery">
+        <div class="gallery-feature">
+            <div class="gallery-inner" id="gallery-inner">
+                <div class="slide">
+                	<img src="images/placeholder-slide01.jpg" alt="Alt Tag for Slide Image" />
+                	<a class="slide-content" href="javascript:void(0);"><span>Link Text for First Slide <i class="icon icon-arrow-r" aria-hidden="true"></i></span></a>
+                </div>
+                <div class="slide">
+                	<img src="images/placeholder-slide02.jpg" alt="Alt Tag for Slide Image" />
+                	<a class="slide-content" href="javascript:void(0);"><span>Link Text for Second Slide <i class="icon icon-arrow-r" aria-hidden="true"></i></span></a>
+                </div>
+                <div class="slide">
+                	<img src="images/placeholder-slide03.jpg" alt="Alt Tag for Slide Image" />
+                	<a class="slide-content" href="javascript:void(0);"><span>Link Text for Third Slide <i class="icon icon-arrow-r" aria-hidden="true"></i></span></a>
+                </div>   
+            </div>
+            <div class="gallery-nav">
+                <a class="prev" aria-label="Move to the Previous Slide"><i class="icon icon-arrow-l" aria-hidden="true"></i></a>
+                <a class="next" aria-label="Move to the Next Slide"><i class="icon icon-arrow-r" aria-hidden="true"></i></a>
+            </div>
+            <div class="gallery-indication" aria-hidden="true"></div>
+        </div>
+    </section> 
+	<!-- End Rotator -->
+
+	<!-- jQuery  -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    
+    <!-- Custom JS Rotator -->
+    <script src="js/responsive-rotator.js"></script> 
+</body>
+</html>

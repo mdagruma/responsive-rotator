@@ -1,0 +1,363 @@
+/* ROTATOR */
+
+html {
+	font-size: 10px;
+}
+
+body {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	background: #fff;
+	font: 2.4rem/3rem "Lato", sans-serif;
+	color: #2b2b2b;
+	-webkit-user-select: text;
+	-webkit-text-size-adjust: none;
+}
+
+.gallery {
+	overflow: hidden;
+	-webkit-user-select: none;
+}
+
+	.gallery-feature {
+		position: relative;	
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+	}
+			
+		.gallery-inner {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		
+			.gallery .slide {
+				z-index: 2;
+				position: relative;
+				overflow: hidden;
+				display: none;
+				float: left;
+                background: #e4d7b6;
+				opacity: 0.8;
+			}
+
+				.gallery .slide img {
+				    display: block;
+				    width: 100%;
+				    margin: 0 auto;
+				}
+
+				.gallery .slide .slide-content {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					padding: 12px 0;
+					text-align: center;
+					text-transform: uppercase;
+					text-decoration: none;
+					background: rgba(255, 255, 255, 0.55);
+					box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.1);
+					transition: background 0.2s, box-shadow 0.2s;
+				}
+
+				.gallery .slide .slide-content:hover {
+					background: rgba(255, 255, 255, 0.9);
+					box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.25);
+				}
+					
+					.gallery .slide .slide-content span {
+						padding: 0 3.75%;
+						font: 3.5rem/3.5rem "Lato Bold", Arial, Helvetica, sans-serif;
+						text-decoration: none;
+						color: #2b2b2b;
+					}
+					
+						.gallery .slide .slide-content span i {
+							position: relative;
+							bottom: 3px;
+							margin-left: 5px;
+							font-size: 2rem;
+							line-height: 1;
+							color: #2b2b2b;
+						}
+					
+			.gallery .slide.active {
+				opacity: 1;	
+			}	
+	
+	.gallery-indication,
+	.gallery-nav {
+		z-index: 4;
+		position: absolute;
+		left: 50%;
+		width: 92.5%;
+		max-width: 92.5%;
+		margin-left: -46.25%;
+		margin-right: auto;
+	}
+	
+	.gallery-indication {
+		bottom: 105px;
+	}
+		
+		.slide-indicator {
+			font-size: 0;
+			line-height: 0;
+			text-align: center;
+		}
+	
+			.slide-indicator a {
+				content: "";
+				display: inline-block;
+				vertical-align: middle;
+				width: 20px;
+				height: 20px;
+				margin-right: 8px;
+				box-sizing: border-box;
+				border-radius: 50%;
+				border: 2px solid transparent;
+				background: rgba(255, 255, 255, 0.7);
+				transition: background 0.2s, border 0.2s;
+			}							
+			
+			.slide-indicator a:last-child {
+				margin-right: 0;
+			}	
+
+			.slide-indicator a:hover,
+			.slide-indicator a.active {
+				border: 2px solid #fff;
+				background: rgba(208, 4, 0, 1);
+			} 
+
+	.gallery-nav {
+		z-index: 4;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 0;		
+	}
+	
+	.gallery-nav::after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+	
+		.next, 
+		.prev {
+			display: inline-block;
+			vertical-align: middle;
+			text-align: center;
+			color: #2b2b2b;
+			cursor: pointer;
+			width: 55px;
+			height: 55px;
+			border-radius: 50%;
+			background: rgba(255, 255, 255, 0.55);
+			box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+			transition: background 0.2s, box-shadow 0.2s;
+		}
+		
+		.next {
+			float: right;
+		}
+			.next i, 
+			.prev i {
+				position: relative;
+				top: 13px;
+				font-size: 3rem;
+				line-height: 1;
+			}
+
+			/* FF Hack for top */
+			_:-moz-any-link, :root .next i {
+				top: 25%;
+			}	
+
+			_:-moz-any-link, :root .prev i {
+				top: 25%;
+			}
+
+			/* IE11 Hack for top */
+			_:-ms-fullscreen, :root .next i {
+				top: 17px;
+			}
+
+			_:-ms-fullscreen, :root .prev i {
+				top: 17px;
+			}	
+
+
+			/* Safari/iOS Hack for top */
+
+			_::-webkit-full-page-media, _:future, :root .next i {
+				top: 15px;
+				left: 2px;
+			} 
+
+			_::-webkit-full-page-media, _:future, :root .prev i {
+				top: 15px;
+				right: 2px;
+			} 
+
+			.next i {
+				left: 1px;
+			}
+
+			.prev i {
+				right: 1px;
+			}
+			
+		.next:hover, 
+		.prev:hover {
+			background: rgba(255, 255, 255, 0.9);
+			box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
+		}
+
+
+/* ----------------------------------------
+
+		MEDIUM SCREEN CSS STYLES
+
+---------------------------------------- */
+
+@media only screen and (max-width: 900px) {
+
+
+	.gallery .slide .slide-content span {
+		font-size: 2.5rem;
+		line-height: 2.5rem;
+	}
+
+		.gallery .slide .slide-content span i {
+			bottom: 1px;
+			font-size: 1.5rem;
+		}
+
+	.next,
+	.prev {
+		width: 45px;
+		height: 45px;
+	}
+
+		.next i,
+		.prev i {
+			top: 10px;
+			font-size: 2.4rem;
+		}
+
+		/* Safari/iOS Hack for top */
+		_::-webkit-full-page-media, _:future, :root .next i {
+			top: 10px;
+		}
+
+		_::-webkit-full-page-media, _:future, :root .prev i {
+			top: 10px;
+		}
+
+	.gallery-indication {
+		bottom: 65px;
+	}
+
+
+}
+
+
+@media only screen and (max-width: 700px) {
+
+	.gallery .slide .slide-content {
+		padding: 8px 0;
+	}
+
+		.gallery .slide .slide-content span {
+			font-size: 2.2rem;
+			line-height: 2.2rem;
+		}
+
+			.gallery .slide .slide-content span i {
+				font-size: 1.2rem;
+			}
+
+}
+
+
+/* ----------------------------------------
+
+		SMALL SCREEN CSS STYLES
+
+---------------------------------------- */
+
+
+@media only screen and (max-width: 600px) {
+
+	.gallery .slide {
+		height: 200px;
+	}
+
+		.gallery .slide img {
+			position: absolute;
+			left: 50%;
+			margin-left: -350px;
+			margin-right: auto;
+			max-width: 700px !important;
+			min-width: 700px;
+			max-height: 200px;
+			min-height: 200px;
+		}
+
+		.next,
+		.prev {
+			width: 35px;
+			height: 35px;
+		}
+
+			.next i,
+			.prev i {
+				top: 8px;
+				font-size: 1.8rem;
+			}
+
+			/* Safari/iOS Hack for top */
+
+			_::-webkit-full-page-media, _:future, :root .next i {
+				top: 9px;
+				left: 1px;
+			}
+
+			_::-webkit-full-page-media, _:future, :root .prev i {
+				top: 9px;
+				right: 1px;
+			}
+
+			.next i {
+				left: 0;
+			}
+
+			.prev {
+				right: 0;
+			}
+
+		.slide-indicator a {
+			width: 15px;
+			height: 15px;
+		}
+
+}
+
+
+@media only screen and (max-width: 415px) {
+
+	.gallery .slide .slide-content {
+		padding: 5px 0;
+	}
+
+		.gallery .slide .slide-content span {
+			font-size: 2rem;
+			line-height: 2rem;
+		}
+
+}
